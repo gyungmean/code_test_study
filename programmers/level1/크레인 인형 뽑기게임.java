@@ -6,7 +6,7 @@ class Solution {
         
         for(int m : moves){
             int i = 0;
-            while(i < board.length - 1){
+            while(i < board.length - 1){//수정해야하는 부분
                 if(board[i][m] != 0) break;
                 if(board[i][m] == 0){
                 i++;
