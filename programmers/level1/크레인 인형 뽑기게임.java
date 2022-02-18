@@ -6,27 +6,29 @@ class Solution {
         
         for(int m : moves){
             int i = 0;
-            while(i < board.length - 1){//수정해야하는 부분
-                if(board[i][m] != 0) break;
-                if(board[i][m] == 0){
-                i++;
+            while(i < board.length){
+                if(board[i][m - 1] != 0) {
+                    break;
+                }
+                if(board[i][m - 1] == 0){
+                    i++;
                 }
             }
             if(i >= board.length) continue;
             if(bucket.empty() != true){
-                if(bucket.peek() != board[i][m]){
-                    bucket.push(board[i][m]);
+                if(bucket.peek() != board[i][m - 1]){
+                    bucket.push(board[i][m - 1]);
                 }
                 else{
                     answer++;
                     bucket.pop();
                 }
-        }
-            else{
-                bucket.push(board[i][m]);
             }
-        
+            else{
+                bucket.push(board[i][m - 1]);
+            }
+            board[i][m - 1] = 0;
+        }
+        return answer * 2;
     }
-        return answer;
-}
 }
