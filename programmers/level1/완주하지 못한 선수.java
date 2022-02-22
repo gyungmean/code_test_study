@@ -3,9 +3,10 @@ class Solution {
     public String solution(String[] participant, String[] completion) {
         String answer = "";
         HashMap<String, Integer> table = new HashMap<String, Integer>();
+        
         for(String p : participant){
             if(table.containsKey(p)){
-                table.put(p, table.get(p) + 1);
+               table.put(p, table.get(p) + 1);
             }
             else{
                 table.put(p, 1);
