@@ -1,7 +1,7 @@
 class Solution {
     public int solution(int n) {
         int answer = 0;
-        for(int i = 2; i <= n; i++){
+        for(int i = 2; i <= n; i++){//지우기
             if(isPrime(i)){
                 answer++;
             }
