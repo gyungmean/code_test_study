@@ -6,9 +6,18 @@ class Solution {
                 answer += " ";
                 continue; 
             }
-            int cipher = s.charAt(i) + n;
-            if(cipher > 'z' || (cipher < 'a' && cipher > 'Z')){
-                cipher -= 26;
+            int cipher = s.charAt(i);
+            if(Character.isUpperCase(cipher)){
+                cipher += n;
+                if(cipher > 'Z'){
+             cipher -= 26;     
+                }
+            }
+            else if(Character.isLowerCase(cipher)){
+                cipher += n;
+                if(cipher > 'z'){
+             cipher -= 26;     
+                }
             }
             answer += (char)cipher;
         }
