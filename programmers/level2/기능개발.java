@@ -5,8 +5,11 @@ class Solution {
         int idx = 0;
         while(idx < progresses.length){
             int count = 1;
-            int remain = 100 - progresses[idx];
-            double day = Math.ceil(remain / speeds[idx++]);
+            int day = (100 - progresses[idx]) / speeds[idx];
+            if((100 - progresses[idx]) % speeds[idx++] != 0) {
+                day++;
+            }
+            
             while(idx < progresses.length && 100 - progresses[idx] <= speeds[idx] * day){
                 count++;
                 idx++;
